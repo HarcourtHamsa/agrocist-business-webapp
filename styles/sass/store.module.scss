@@ -1,0 +1,23 @@
+@import './variables';
+
+.container {
+    max-width: 75vw;
+    margin: auto;
+
+    [class=products] {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media only screen and (max-width: 948px) {
+    .container {
+        max-width: 90vw !important;
+
+        [class=products] {
+            grid-template-columns: 1fr;
+        }
+    }
+}

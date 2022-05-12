@@ -1,0 +1,83 @@
+.container {
+    width: 100%;
+    height: 50vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+
+
+    [class=carousel] {
+        width: max-content;
+        height: inherit;
+        display: flex;
+        overflow-x: scroll;
+        gap: 2rem;
+
+        animation: slide 20s ease forwards infinite;
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0%);
+            }
+
+            25% {
+                transform: translateX(-25%);
+            }
+
+            50% {
+                transform: translateX(-50%);
+            }
+
+            75% {
+                transform: translateX(-75%);
+            }
+
+            100% {
+                transform: translateX(-0%);
+            }
+        }
+
+        [class=card] {
+            width: 75vw;
+            height: 100%;
+            flex-wrap: nowrap;
+            background-color: azure;
+            border-radius: 10px;
+
+
+        }
+
+    }
+
+}
+
+.dots {
+    // background-color: blue;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    [class=dot] {
+        width: 10px;
+        height: 10px;
+        background-color: black;
+        border-radius: 50%;
+        margin: 2px;
+    }
+}
+
+
+@media only screen and (max-width: 948px) {
+    .container {
+        [class=carousel] {
+            height: fit-content;
+            gap: 5px;
+            margin-bottom: 0;
+
+            [class=card] {
+                height: 200px;
+            }
+        }
+    }
+}

@@ -1,0 +1,148 @@
+@import './variables';
+
+.container {
+    max-width: 75vw;
+    margin: auto;
+
+    [class=stats] {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+
+    [id=add-product-btn] {
+        padding: 12px 25px;
+        border: 0;
+        margin: 2rem 2rem auto auto;
+        display: block;
+        background-color: $green;
+        color: white;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+    }
+
+    [class=filter-container] {
+        // background-color: red;
+        margin-top: 1rem;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+
+        [id=select-container] {
+            select {
+                // border: 0;
+                padding: 12px 25px;
+                background-color: transparent;
+                // color: $green;
+                width: fit-content;
+
+
+                option {
+                    // color: $green;
+                    padding: 12px 25px !important;
+                    margin: 1rem;
+                }
+            }
+        }
+
+        input {
+            margin-bottom: 0;
+        }
+    }
+
+}
+
+.products {
+    margin-top: 1rem;
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+
+        th {
+            background-color: $green;
+            color: white;
+            font-weight: normal;
+        }
+
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr {
+            position: relative;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        [id=vertical-menu] {
+            svg {
+                // background-color: red;
+            }
+        }
+
+        [class=toggle-dropdown] {
+            background-color: green;
+            padding: 1rem;
+            width: 150px;
+            height: fit-content;
+            right: 0%;
+            top: 80%;
+            position: absolute;
+
+            ul {
+                margin-left: 0;
+                padding-left: 0;
+
+                li {
+                    list-style-type: none;
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 948px) {
+    .container {
+        max-width: 90vw !important;
+
+        [class=stats] {
+            grid-template-columns: 1fr;
+        }
+
+        [id=add-product-btn] {
+            margin-right: auto;
+            margin-left: 0;
+        }
+
+        [class=filter-container] {
+            grid-template-columns: 1fr;
+
+            input {
+                margin-top: 1rem;
+            }
+        }
+
+        .products {
+            width: 100vw;
+            overflow-x: scroll;
+
+            table {
+                width: max-content;
+                overflow-x: scroll;
+            }
+        }
+    }
+}

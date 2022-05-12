@@ -1,0 +1,45 @@
+@import './variables';
+
+.product_card {
+    width: inherit;
+    height: 300px;
+    background-color: white;
+    box-shadow: 0px 1px 1px 0px grey;
+    border-radius: 10px;
+    overflow: hidden;
+
+    [class=top] {
+        height: 60%;
+        width: 100%;
+
+        background-color: aliceblue;
+
+    }
+
+    [class=bottom] {
+        height: 40%;
+        width: 100%;
+        padding: 12px 25px;
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+
+        [class=product-price] {
+            color: $green;
+        }
+
+        // background-color: tomato;
+
+        [id=bookmark] {
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 1px 1px 0px grey;
+            transform: translateX(50%) translateY(-80%);
+
+        }
+    }
+}

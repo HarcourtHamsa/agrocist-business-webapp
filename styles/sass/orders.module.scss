@@ -1,0 +1,118 @@
+@import './variables';
+
+.container {
+    max-width: 75vw;
+    margin: auto;
+
+    [class=sort-buttons-container] {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        div {
+            &:first-child {
+
+
+                button {
+                    padding: 12px 25px;
+                    margin-right: 3px;
+                    border: 0;
+                    background-color: $lightGreen;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            &:last-child {
+                background-color: transparent;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1rem;
+                padding: 5px 25px;
+                border: 1px solid $green;
+                border-radius: $radius;
+                color: $green;
+
+                select {
+                    border: 0;
+                    background-color: transparent;
+                    color: $green;
+                    width: 100px;
+
+
+                    option {
+                        color: $green;
+                        padding: 12px 25px !important;
+                        margin: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.orders {
+    margin-top: 3rem;
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+
+        th {
+            background-color: $green;
+            color: white;
+            font-weight: normal;
+        }
+
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    }
+
+}
+
+
+
+@media only screen and (max-width: 948px) {
+    .container {
+        max-width: 90vw !important;
+        // background-color: red;
+
+        [class=sort-buttons-container] {
+            flex-direction: column;
+            align-items: unset;
+
+            div {
+                &:first-child {
+                    // background-color: green;
+                    margin-bottom: 1rem;
+                    white-space: nowrap;
+                    overflow-x: scroll;
+                }
+            }
+        }
+
+        .orders {
+            width: 100vw;
+            overflow-x: scroll;
+
+            table {
+                width: max-content;
+                overflow-x: scroll;
+            }
+        }
+    }
+}
