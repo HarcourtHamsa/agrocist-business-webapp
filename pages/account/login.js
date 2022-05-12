@@ -8,7 +8,7 @@ import styles from "../../styles/sass/login.module.scss";
 import { useFormik } from "formik";
 import helpers from "../../helpers/helpers";
 
-function login() {
+function Login() {
   const formik = useFormik({
     initialValues: {
       email: "",
