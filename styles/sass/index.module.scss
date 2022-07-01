@@ -20,16 +20,22 @@
 
         div {
             &:first-child {
+                // background: red;
+                height: fit-content;
+                padding: 1rem 0;
                 h1 {
                     // font-size: 3.5rem;
                     line-height: 1.5;
-                    color: $green
+                    color: $green;
+                    margin-bottom: 3rem;
                 }
 
 
-                button {
+                a {
                     @include btn;
-                    margin-top: 1rem;
+                    margin-top: 2rem !important;
+                    padding: 12px 25px;
+                    text-decoration: none;
                 }
             }
 
@@ -159,10 +165,17 @@
                         // width: 80%;
                     }
 
-                    button {
+                    p{
+                        // background: red;
+                        margin-bottom: 3rem;
+                    }
+
+                    a {
                         @include btn;
                         background-color: $yellow;
-                        margin-top: 1rem;
+                        margin-top: 2rem !important;
+                        padding: 12px 25px;
+                        text-decoration: none;
                     }
                 }
 

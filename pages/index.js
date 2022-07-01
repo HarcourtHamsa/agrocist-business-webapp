@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Link from 'next/link';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "../styles/sass/index.module.scss";
@@ -28,7 +29,7 @@ function index() {
               A B2B platform digitizing the distribution of agro inputs from
               manufacturers to retailers
             </h1>
-            <button>Get started</button>
+            <Link href="/account">Get started</Link>
           </div>
 
           <div className="images">
@@ -50,7 +51,7 @@ function index() {
                 manufacturers/distributors. Products like; fertilizer, seeds,
                 agro chemicals, Animal feeds, drugs, accessories etc
               </p>
-              <button>Get started</button>
+              <Link href="/account/">Get started</Link>
             </div>
             <div>
               <Image src={bags} alt="A man smiling" />

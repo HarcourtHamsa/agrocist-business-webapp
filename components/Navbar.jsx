@@ -16,8 +16,7 @@ function Navbar() {
         </div>
 
         <div id="nav-links" className={isOpen ? "active" : null}>
-          <Link href="/account/login">Login</Link>
-          <Link href="/account/signup">Sign up</Link>
+          <Link href="/account/">Get started</Link>
         </div>
 
         <div

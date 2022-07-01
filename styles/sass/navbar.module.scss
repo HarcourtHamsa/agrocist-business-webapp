@@ -28,12 +28,10 @@
                 text-decoration: none;
                 color: $green;
                 margin-left: 1rem;
-
-                &:last-child {
-                    background-color: $yellow;
-                    padding: .5rem 1rem;
-                    border-radius: $radius;
-                }
+                padding: 12px 25px;
+                background-color: $yellow;
+                border-radius: 3px
+                
             }
         }
 
