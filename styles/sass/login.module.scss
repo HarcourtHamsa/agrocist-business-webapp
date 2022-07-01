@@ -27,6 +27,15 @@
             border-radius: $radius;
             box-shadow: 0 1px 1px 0 grey;
 
+            [class=form-group] {
+                margin-bottom: 1rem;
+
+                div {
+                   margin: 10px 0;
+                }
+
+            }
+
             h3 {
                 text-align: center;
                 font-weight: normal;

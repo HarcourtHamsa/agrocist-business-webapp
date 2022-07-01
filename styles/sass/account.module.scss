@@ -1,0 +1,63 @@
+@import './variables';
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    background-color: $lightGreen;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    [class=container] {
+        width: 450px;
+        height: fit-content;
+
+        [class=logo-container] {
+            display: flex;
+            justify-content: center;
+        }
+
+        [class=title] {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            // font-weight: 900;
+        }
+
+        h3 {
+            // font-weight: bold;
+            font-weight: normal;
+        }
+
+        [class=card] {
+            padding: 12px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: content-box;
+            margin-bottom: 1rem;
+            border-radius: 3px;
+            background-color: white;
+
+            &:hover {
+                cursor: pointer;
+                border: 1px solid $green;
+                box-sizing: border-box;
+
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 948px) {
+    .page {
+
+        [class=container] {
+            max-width: 90vw !important;
+            // background-color: red;
+        }
+    }
+}

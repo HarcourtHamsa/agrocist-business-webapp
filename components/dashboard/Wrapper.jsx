@@ -10,6 +10,7 @@ import {
   BiBookContent,
   BiShoppingBag,
   BiGitPullRequest,
+  BiWalletAlt,
 } from "react-icons/bi";
 import { FaRegAddressBook } from "react-icons/fa";
 import SearchBar from "./SearchBar";
@@ -92,9 +93,14 @@ const NAV_ITEMS = [
   },
 
   {
-    label: "History",
+    label: "Transactions",
     href: "/dashboard",
     icon: <BiHistory size={20} />,
+  },
+  {
+    label: "Wallet",
+    href: "/dashboard/wallet",
+    icon: <BiWalletAlt size={20} />,
   },
 
   {

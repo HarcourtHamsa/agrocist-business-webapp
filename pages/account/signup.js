@@ -1,11 +1,77 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import InputElement from "../../components/InputElement";
 import SubmitButton from "../../components/SubmitButton";
 import styles from "../../styles/sass/signup.module.scss";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import { useFormik, Field } from "formik";
+import helpers from "../../helpers/helpers";
+import { useRouter } from "next/router";
 
 function signup() {
+  const [isLoading, setIsLoading] = useState(false);
+  const Router = useRouter();
+
+  const notify = (type, msg) => toast(msg, { type: type, theme: "dark" });
+
+  const formik = useFormik({
+    initialValues: {
+      firstname: "",
+      lastname: "",
+      phonenumber: "",
+      email: "",
+      password: "",
+      address: "",
+      accounttype: "",
+    },
+
+    onSubmit: async (values) => {
+      const fullname = values.firstname + values.lastname;
+
+      const data = {
+        fullname,
+        phonenumber: values.phonenumber,
+        email: values.email,
+        address: values.address,
+        password: values.password,
+      };
+
+      values.fullname = fullname;
+
+      try {
+        setIsLoading(true);
+        const res = await helpers.register(data, values.accounttype);
+        console.log("res", res);
+
+        if (res.data.success) {
+          notify("sucess", "Verification code sent to your email");
+          Router.push(
+            {
+              pathname: "/account/verify",
+              query: {
+                email: values.email,
+              },
+            },
+            "/account/verify"
+          );
+        }
+
+        if (res.response.status == 400 || 422) {
+          notify("error", "Account already exists");
+          return;
+        }
+      } catch (error) {
+        console.log("ERROR", error);
+      } finally {
+        // hide loader
+        setIsLoading(false);
+      }
+    },
+  });
+
   return (
     <>
       <Head>
@@ -14,46 +80,96 @@ function signup() {
       </Head>
 
       <main className={styles.page}>
-        <div className={"container"}>
+        <ToastContainer position="top-center" hideProgressBar={true} />
+
+        <form className={"container"} onSubmit={formik.handleSubmit}>
           <div className={"card"}>
             <h3>Create Your Account</h3>
-            <InputElement placeholder="First name" />
-            <InputElement placeholder="Last name" />
-            <InputElement placeholder="Email address" />
+            <InputElement
+              placeholder="First name"
+              type="text"
+              name="firstname"
+              onChange={formik.handleChange}
+              value={formik.values.firstname}
+            />
+            <InputElement
+              placeholder="Last name"
+              name="lastname"
+              type="text"
+              onChange={formik.handleChange}
+              value={formik.values.lastname}
+            />
+            <InputElement
+              placeholder="Email address"
+              name="email"
+              type="email"
+              onChange={formik.handleChange}
+              value={formik.values.email}
+            />
+
+            <InputElement
+              placeholder="Address"
+              name="address"
+              type="text"
+              onChange={formik.handleChange}
+              value={formik.values.address}
+            />
 
             <div className="flex">
-              <InputElement value="+234" />
-              <InputElement placeholder="Phone number" />
+              <InputElement readOnly value="+234" />
+              <InputElement
+                placeholder="Phone number"
+                name="phonenumber"
+                onChange={formik.handleChange}
+                value={formik.values.phonenumber}
+              />
             </div>
-            <InputElement placeholder="Password" />
-            {/* <div class="form-group">
-              <p>What type of business do you own?</p>
+            <InputElement
+              placeholder="Password"
+              type="password"
+              name="password"
+              onChange={formik.handleChange}
+              value={formik.values.password}
+            />
+            <div className="form-group">
+              <p style={{ textAlign: "left" }}>
+                What type of business do you own?
+              </p>
 
               <div>
                 <input
                   type="radio"
-                  id="huey"
-                  name="drone"
-                  value="huey"
-                  checked
+                  id="distributor"
+                  name="accounttype"
+                  onChange={formik.handleChange}
+                  value={"distributor"}
                 />
-                <label for="huey">Starter Business</label>
+                <label htmlFor="distributor">Distributor</label>
                 <br />
               </div>
 
               <div>
-                <input type="radio" id="dewey" name="drone" value="dewey" />
-                <label for="dewey">Registered Business</label>
+                <input
+                  type="radio"
+                  id="retailer"
+                  value="retailer"
+                  name="accounttype"
+                  onChange={formik.handleChange}
+                  value={"retailer"}
+                />
+                <label htmlFor="retailer">Retailer</label>
                 <br />
               </div>
-            </div> */}
-            <SubmitButton label="Create My Account" />
+            </div>
+            <SubmitButton
+              label={isLoading ? "Loading..." : "Create My Account"}
+            />
 
             <p>
               Already have an account? <Link href="/account/login">Login</Link>
             </p>
           </div>
-        </div>
+        </form>
       </main>
     </>
   );

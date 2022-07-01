@@ -1,0 +1,42 @@
+.container {
+    max-width: 75vw;
+    margin: auto;
+
+    [class=cards] {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+
+        [id=wallet-card] {
+            // background-color: red;
+            // width: fit-content;
+            padding: 12px 25px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+
+            [class=amount] {
+                margin-bottom: -10%;
+                font-weight: bold;
+                font-size: 2rem;
+                // background-color: green;
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 948px) {
+    .container {
+        max-width: 90vw !important;
+
+        [class=cards] {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}

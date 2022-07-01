@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Wrapper from "../../components/dashboard/Wrapper";
-import styles from "../../styles/sass/products.module.scss";
-import StatsCard from "../../components/dashboard/StatsCard";
-import InputElement from "../../components/InputElement";
+import Wrapper from "../../../components/dashboard/Wrapper";
+import styles from "../../../styles/sass/products.module.scss";
+import StatsCard from "../../../components/dashboard/StatsCard";
+import InputElement from "../../../components/InputElement";
 
 import { FiMoreVertical } from "react-icons/fi";
 

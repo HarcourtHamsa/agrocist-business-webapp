@@ -1,0 +1,88 @@
+@import './variables';
+
+.container {
+    max-width: 75vw;
+    margin: auto;
+
+    [class=card] {
+        width: 100%;
+        height: fit-content;
+        padding: 12px 25px;
+        background-color: white;
+
+        [id=filters] {
+            // background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+
+            button {
+                padding: 10px;
+                border: 0;
+                margin-left: 5px;
+                border: 1px solid $green;
+                color: $green;
+                background-color: white;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        [class=section] {
+            margin-bottom: 3rem;
+
+            [class=date] {
+                font-weight: bold;
+            }
+
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+                width: 100%;
+                border-top: 1px solid #ddd;
+                border-bottom: 1px solid #ddd;
+
+                th {
+                    background-color: white;
+                    color: black;
+                    // font-weight: normal;
+                }
+
+
+                td,
+                th {
+                    // border: 1px solid #dddddd;
+                    text-align: left;
+                    padding: 8px;
+                }
+
+                tr {
+                    background-color: white;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 948px) {
+    .container {
+        max-width: 90vw !important;
+
+        [class=card] {
+            [class=section] {
+
+                width: 100vw;
+                overflow-x: scroll;
+
+                table {
+                    width: max-content;
+                    overflow-x: scroll;
+                }
+
+            }
+        }
+    }
+}
