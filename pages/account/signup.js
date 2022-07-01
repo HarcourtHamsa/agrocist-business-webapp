@@ -11,7 +11,7 @@ import { useFormik, Field } from "formik";
 import helpers from "../../helpers/helpers";
 import { useRouter } from "next/router";
 
-function signup() {
+function Signup() {
   const [isLoading, setIsLoading] = useState(false);
   const Router = useRouter();
 
@@ -155,7 +155,6 @@ function signup() {
                   value="retailer"
                   name="accounttype"
                   onChange={formik.handleChange}
-                  value={"retailer"}
                 />
                 <label htmlFor="retailer">Retailer</label>
                 <br />
@@ -175,4 +174,4 @@ function signup() {
   );
 }
 
-export default signup;
+export default Signup;
