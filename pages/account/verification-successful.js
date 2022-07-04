@@ -50,7 +50,7 @@ export default function VerificationSuccessful () {
 
               {/* <p>Your account has been verified</p> */}
 
-              <Link href="/account/login" passHref>
+              <Link href="/account" passHref>
                 <button>Login</button>
               </Link>
               <p>

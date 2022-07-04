@@ -31,6 +31,40 @@
     gap: 2rem;
 }
 
+.stats {
+    background-color: white;
+    box-shadow: 0px 1px 1px 0px grey;
+    padding: 12px 25px;
+    margin-top: 3rem;
+    text-align: center;
+
+    [class=headers] {
+        display: flex;
+        justify-content: space-between;
+
+        [class=line] {
+            width: 1px;
+            height: inherit;
+            background-color: #595959;
+        }
+
+        div {
+            p {
+                &:first-of-type {
+                    font-size: 14px;
+                    // background-color: red;
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                    font-weight: normal;
+                }
+
+                font-size: 2rem;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 800px) {
     .container {
         max-width: 90vw;
@@ -51,4 +85,17 @@
         box-sizing: border-box;
     }
 
+    .stats {
+
+        [class=headers] {
+            display: flex;
+            flex-direction: column;
+
+            [class=line] {
+                width: inherit;
+                height: 1px;
+                background-color: #595959;
+            }
+        }
+    }
 }

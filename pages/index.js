@@ -44,7 +44,7 @@ function index() {
         <div className="container">
           <div className="grid">
             <div>
-              <h2>Are you an agro input retailer?</h2>
+              <h2>Are You an AGRO Input Retailer?</h2>
               <p>
                 Stock your agro shops easily at the comfort of your phones. Get
                 access to a wide range of agro input products from top

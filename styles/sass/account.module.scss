@@ -7,9 +7,10 @@
 
     display: flex;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
 
     [class=container] {
+        margin-top: 3rem;
         width: 450px;
         height: fit-content;
 
@@ -46,9 +47,6 @@
 
             &:hover {
                 cursor: pointer;
-                border: 2px solid $green;
-                box-sizing: border-box;
-
             }
         }
     }

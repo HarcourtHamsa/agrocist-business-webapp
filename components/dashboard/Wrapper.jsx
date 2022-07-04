@@ -12,7 +12,7 @@ import {
   BiGitPullRequest,
   BiWalletAlt,
 } from "react-icons/bi";
-import { FaRegAddressBook } from "react-icons/fa";
+import { FaHome, FaThList, FaStore, FaDisease, FaHistory, FaWallet, FaCog } from "react-icons/fa";
 import SearchBar from "./SearchBar";
 
 function Wrapper({ children }) {
@@ -77,36 +77,42 @@ const NAV_ITEMS = [
   {
     label: "Dashboard",
     href: "/dashboard",
-    icon: <BiHomeSmile size={20} />,
+    icon: <FaHome size={20} />,
   },
 
   {
     label: "Orders",
     href: "/dashboard/orders",
-    icon: <BiBookContent size={20} />,
+    icon: <FaThList size={20} />,
   },
 
   {
     label: "Products",
     href: "/dashboard/products",
-    icon: <BiShoppingBag size={20} />,
+    icon: <FaStore size={20} />,
+  },
+
+  {
+    label: "Disease Intelligence",
+    href: "/dashboard/products",
+    icon: <FaDisease size={20} />,
   },
 
   {
     label: "Transactions",
     href: "/dashboard",
-    icon: <BiHistory size={20} />,
+    icon: <FaHistory size={20} />,
   },
   {
     label: "Wallet",
     href: "/dashboard/wallet",
-    icon: <BiWalletAlt size={20} />,
+    icon: <FaWallet size={20} />,
   },
 
   {
     label: "Settings",
     href: "/dashboard",
-    icon: <BiCog size={20} />,
+    icon: <FaCog size={20} />,
   },
 ];
 

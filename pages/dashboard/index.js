@@ -71,8 +71,27 @@ function Index() {
             /> */}
           </div>
 
-          <div className={styles.col}>
-            {/* <Chart /> */}
+          <div className={styles.stats}>
+            <div className="headers">
+              <div>
+                <p>Balance</p>
+                <p>N 2,041,700</p>
+              </div>
+
+              <div className="line"></div>
+
+              <div>
+                <p>Total earnings</p>
+                <p>N 12,041,700</p>
+              </div>
+
+              <div className="line"></div>
+
+              <div>
+                <p>Total produts</p>
+                <p>41,700</p>
+              </div>
+            </div>
           </div>
         </div>
       </Wrapper>
