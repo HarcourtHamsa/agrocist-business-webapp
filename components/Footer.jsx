@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import logo from "../assets/images/logo.svg";
+import logo from "../assets/images/transparent-logo.png";
 import styles from "../styles/sass/footer.module.scss";
 import Link from "next/link";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Link from 'next/link';
+import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "../styles/sass/index.module.scss";
@@ -24,7 +24,7 @@ function index() {
 
       <div className={styles.hero}>
         <div className="container">
-          <div>
+          <div id="bloc1">
             <h1>
               A B2B platform digitizing the distribution of agro inputs from
               manufacturers to retailers
@@ -32,10 +32,11 @@ function index() {
             <Link href="/account">Get started</Link>
           </div>
 
-          <div className="images">
+          <div className="images" id="bloc2">
+            {/* <p>two</p> */}
             <div id="one"></div>
             <div id="two"></div>
-            <div id="three"></div>
+            <div id="three"></div> 
           </div>
         </div>
       </div>
