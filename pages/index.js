@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import styles from "../styles/sass/index.module.scss";
 
 // assets
-import bags from "../assets/images/bags.png";
+import products from "../assets/images/products.png";
 import dashboard from "../assets/images/dashboard.png";
 
 import Image from "next/image";
@@ -55,7 +55,7 @@ function index() {
               <Link href="/account/">Get started</Link>
             </div>
             <div>
-              <Image src={bags} alt="A man smiling" />
+              <Image src={products} alt="A man smiling" />
             </div>
           </div>
         </div>
